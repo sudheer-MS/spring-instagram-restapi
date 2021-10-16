@@ -22,6 +22,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -34,6 +38,7 @@ public class User {
 	@SequenceGenerator(name = "user_gen", sequenceName = "user_seq", initialValue = 1,allocationSize = 1)
 	private Integer userId;
 	private String userName;
+	@JsonIgnore
 	private String password;
 	private String gender;
 	

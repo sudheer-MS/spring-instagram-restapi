@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.instagram.model.User;
 
+/**
+ * @author SudheerMS
+ *
+ */
 public interface IUserService {
 	
 	String registerUser(User user);

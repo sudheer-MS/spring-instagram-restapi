@@ -22,6 +22,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -43,11 +47,9 @@ public class Post {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "post_id")
-	@JsonIgnore
 	private Set<Comment> commentSet;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "post_id")
-	@JsonIgnore
 	private Set<Like> likeSet;
 }

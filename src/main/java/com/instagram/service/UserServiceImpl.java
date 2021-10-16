@@ -16,6 +16,10 @@ import com.instagram.model.Post;
 import com.instagram.model.User;
 import com.instagram.repository.IUserRepository;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Service
 public class UserServiceImpl implements IUserService {
 

@@ -1,5 +1,9 @@
 package com.instagram.exceptions;
 
+/**
+ * @author SudheerMS
+ *
+ */
 public class UserNotFoundException extends RuntimeException {
 
 	/**

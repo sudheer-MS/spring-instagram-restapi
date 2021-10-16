@@ -20,6 +20,10 @@ import com.instagram.model.Post;
 import com.instagram.model.User;
 import com.instagram.service.IPostService;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @RestController
 @RequestMapping("/instagram-api")
 public class PostController {

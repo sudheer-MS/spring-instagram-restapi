@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.instagram.model.User;
 import com.instagram.service.IUserService;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @RestController
 @RequestMapping("/instagram-api")
 public class UserController {

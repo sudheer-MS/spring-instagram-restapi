@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.instagram.model.User;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Repository
 public interface IUserRepository extends JpaRepository<User, Integer> {
 

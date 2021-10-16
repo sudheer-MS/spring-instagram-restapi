@@ -18,6 +18,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.instagram.model.ApiErrors;
 
 
+/**
+ * @author SudheerMS
+ *
+ */
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 

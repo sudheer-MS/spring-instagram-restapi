@@ -7,6 +7,10 @@ import com.instagram.model.Like;
 import com.instagram.model.Post;
 import com.instagram.model.User;
 
+/**
+ * @author SudheerMS
+ *
+ */
 public interface IPostService {
 	
 	String createPost(Post post, String userName);

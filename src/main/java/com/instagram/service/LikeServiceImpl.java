@@ -3,6 +3,7 @@ package com.instagram.service;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.instagram.exceptions.PostNotFoundException;
 import com.instagram.exceptions.UserNotFoundException;
@@ -13,6 +14,11 @@ import com.instagram.repository.ILikeRepository;
 import com.instagram.repository.IPostRepository;
 import com.instagram.repository.IUserRepository;
 
+/**
+ * @author SudheerMS
+ *
+ */
+@Service
 public class LikeServiceImpl implements ILikeService {
 	
 	ILikeRepository likeRepository;
@@ -38,8 +44,6 @@ public class LikeServiceImpl implements ILikeService {
 	
 	LocalDateTime dateTime = LocalDateTime.now();
 
-	Like like = new Like();
-
 	@Override
 	public String likeToPost(User user, int postId) {
 		User likeUser = userRepository.findByUserName(user.getUserName());
@@ -47,6 +51,7 @@ public class LikeServiceImpl implements ILikeService {
 			throw new UserNotFoundException("no user found");
 		}
 		Post postToLike = postRepository.findById(postId).orElseThrow(() -> new PostNotFoundException("no post found"));
+		Like like = new Like();
 		like.setDateTime(dateTime);
 		like.setUser(likeUser);
 		like.setPost(postToLike);

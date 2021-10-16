@@ -15,6 +15,10 @@ import com.instagram.model.Comment;
 import com.instagram.model.User;
 import com.instagram.service.ICommentService;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @RestController
 @RequestMapping("/instagram-api")
 public class CommentController {
@@ -34,9 +38,9 @@ public class CommentController {
 		return ResponseEntity.status(HttpStatus.CREATED).headers(headers).body(newComment);
 	}
 	
-	@DeleteMapping("/like/post/{postId}/{likeId}")
-	ResponseEntity<String> removeComment(@RequestBody User user, @PathVariable("postId") int postId, @PathVariable("likeId") int likeId){
-		String response = commentService.removeComment(user, likeId, postId);
+	@DeleteMapping("/comment/post/{postId}/{commentId}")
+	ResponseEntity<String> removeComment(@RequestBody User user, @PathVariable("postId") int postId, @PathVariable("commentId") int commentId){
+		String response = commentService.removeComment(user, commentId, postId);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("desc", "remove a comment api");
 		return ResponseEntity.status(HttpStatus.CREATED).headers(headers).body(response);

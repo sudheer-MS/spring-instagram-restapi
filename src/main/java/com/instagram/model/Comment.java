@@ -18,6 +18,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -34,7 +38,6 @@ public class Comment {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	@JsonIgnore
 	private User user;
 	
 	private LocalDateTime dateTime;

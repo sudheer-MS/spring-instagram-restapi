@@ -3,6 +3,7 @@ package com.instagram.service;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.instagram.exceptions.PostNotFoundException;
 import com.instagram.exceptions.UserNotFoundException;
@@ -13,6 +14,11 @@ import com.instagram.repository.ICommentRepository;
 import com.instagram.repository.IPostRepository;
 import com.instagram.repository.IUserRepository;
 
+/**
+ * @author SudheerMS
+ *
+ */
+@Service
 public class CommentServiceImpl implements ICommentService {
 
 	ICommentRepository commentRepository;
@@ -38,8 +44,6 @@ public class CommentServiceImpl implements ICommentService {
 	
 	LocalDateTime dateTime = LocalDateTime.now();
 
-	Comment newComment = new Comment();
-
 	@Override
 	public Comment commentToPost(User user, String comment, int postId) {
 		User commentUser = userRepository.findByUserName(user.getUserName());
@@ -47,6 +51,7 @@ public class CommentServiceImpl implements ICommentService {
 			throw new UserNotFoundException("no user found");
 		}
 		Post postToComment = postRepository.findById(postId).orElseThrow(() -> new PostNotFoundException("no post found"));
+		Comment newComment = new Comment();
 		newComment.setComment(comment);
 		newComment.setDateTime(dateTime);
 		newComment.setPost(postToComment);

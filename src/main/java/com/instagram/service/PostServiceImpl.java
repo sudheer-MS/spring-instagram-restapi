@@ -18,6 +18,10 @@ import com.instagram.model.User;
 import com.instagram.repository.IPostRepository;
 import com.instagram.repository.IUserRepository;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Service
 public class PostServiceImpl implements IPostService {
 

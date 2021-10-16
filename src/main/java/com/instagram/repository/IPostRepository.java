@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.instagram.model.Post;
 
+/**
+ * @author SudheerMS
+ *
+ */
 @Repository
 public interface IPostRepository extends JpaRepository<Post, Integer> {
 	
